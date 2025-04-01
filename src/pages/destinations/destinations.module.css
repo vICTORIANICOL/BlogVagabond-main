@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* General Styling */
+.videoSection {
+  position: relative;
+  width: 100%;
+  height: 200vh; 
+  overflow: hidden;
+}
+
+/* Background Video */
+.backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 0.5s ease-out;
+}
+
+/* Gradient Overlay */
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Logo */
+.logoName {
+    position: absolute;
+    width: 100%;
+    top:  0%;
+    z-index: 3;
+    text-align: center; 
+}
+
+.logoAnime {
+    position: relative;
+    font-family: "Montserrat", serif; 
+    font-size: clamp(2.8125rem, -0.3125rem + 10vw, 5.3125rem);
+    color: transparent;
+    font-weight: normal;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+    animation: slideAcross 6s ease-in-out forwards;
+    opacity: 0;
+    display: inline-block; 
+}
+
+@keyframes slideAcross {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Scroll-In Text */
+.textContainer {
+  position: relative;
+  margin-top: 40vh;
+  text-align: center;
+  z-index: 2;
+}
+
+.scrollText {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.scrollText.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paragraphText {
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgb(214, 214, 214);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+}
+
+.paragraphText.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Black Background Box Extension */
+.blackSection {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  height: auto; 
+  min-height: 150vh; 
+  background-color: black;
+  padding: 50px 0 100px 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Box Section */
+.boxContainer {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.boxContainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.boxText {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: clamp(2rem, 1.5rem + 2vw, 3.2rem);
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .boxText {
+    margin-top: -70px; 
+    margin-bottom: 30px;
+  }
+}
+
+/* Red Boxes */
+.boxWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 1600px) {
+  .videoSection{
+    height: 250vh;
+  }
+  .boxWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    gap: 30px;
+    margin-bottom: 100px; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .boxWrapper {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 40px;
+    margin-bottom: 150px; /* Increased bottom margin for mobile */
+  }
+  .blackSection {
+    padding: 30px 0 150px 0; /* Increased bottom padding */
+    min-height: 350vh; /* Increased minimum height */
+  }
+
+  .videoSection{
+    height: 330vh; /* Increased height to accommodate content */
+  }
+}
+
+.redBox {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.redBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.redBox:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.redBox:hover img {
+  filter: brightness(1);
+}
+
+.boxTitle {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 0;
+  text-align: center;
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  text-transform: uppercase;
+  font-weight: 100;
+  cursor: pointer;
+}

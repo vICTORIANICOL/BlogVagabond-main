@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+/* Fonts */
+
+.supportContainer {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  height: auto;
+  background-color: black;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.supportHeader {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.supportImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.supportOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.titleContainer {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -20px; 
+}
+
+.supportTitle2 {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  animation: slideFromLeft 1s ease-out forwards;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: -20px;
+}
+
+.supportTitle1 {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 5.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  animation: slideFromRight 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.supportText {
+  font-family: "Open Sans", sans-serif;
+  margin: 30px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.supportHeading{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: white;
+}
+
+.supportParagraph{
+  max-width: 800px;
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: #fbf9f9;
+  line-height: 1.5;
+  margin-top: -30px;
+}
+
+.supportDiscount{
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(215, 55, 55);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 50px;
+}
+
+.supportLogos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.logoCard {
+  text-align: center;
+  max-width: 150px;
+  transition: transform 0.3s ease;
+  background-color: #3b3535;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 100px;
+}
+
+.logoCard:hover {
+  transform: scale(1.05);
+  background-color: #3a3a3a;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.logoCard:hover .logo {
+  opacity: 0.8;
+}
+
+.logoText {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  font-size: 0.9rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgb(215, 55, 55);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logoText:hover {
+  background-color: rgb(215, 55, 55, 0.3);
+  border-color: white;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .supportLogos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .supportHeading {
+    font-size: 3rem;
+  }
+  
+  .supportParagraph {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .supportLogos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .supportTitle1 {
+    font-size: 2.5rem;
+  }
+
+  .supportTitle2 {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 80px;
+  }
+  
+  .supportHeader {
+    height: 400px;
+  }
+  
+  .supportHeading {
+    font-size: 2.5rem;
+  }
+  
+  .logoCard {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .supportTitle1 {
+    font-size: 2rem;
+  }
+
+  .supportTitle2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+  
+  .supportHeading {
+    font-size: 2rem;
+  }
+  
+  .supportParagraph {
+    font-size: 1rem;
+  }
+  
+  .supportDiscount {
+    font-size: 1rem;
+  }
+  
+  .logoCard {
+    max-width: 120px;
+    padding: 10px;
+  }
+
+  .logoText{
+    font-size: 10px;
+  }
+}
+
+
+.supportText {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+
+/*donation*/
+.donationCard {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.donationTitle {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.inputField {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.donationButton {
+  background-color: rgb(215, 55, 55);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.donationButton:hover {
+  background-color: rgb(215, 55, 55, 0.8);
+}
+
+@media (max-width: 600px) {
+  .donationCard {
+    width: 80%;
+  }
+
+  .inputField {
+    font-size: 0.9rem;
+  }
+
+  .donationButton {
+    font-size: 0.9rem;
+  }
+}

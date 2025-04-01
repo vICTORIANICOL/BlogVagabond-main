@@ -1,0 +1,81 @@
+.footer {
+  background-color: #161617;
+  color: #ffffff;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.footerSection h3 {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footerSection p {
+  font-family: "Open Sans", serif;
+  text-align: center;
+  font-weight: 100;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sponsorsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sponsorsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.sponsorItem img {
+  width: 70%;
+  height: auto;
+}
+
+.footerBottom {
+  text-align: center;
+  max-width: 600px;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+}
+
+.footerBottom p {
+  font-family: "Open Sans", serif;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+  .footerBottom p{
+    margin-right: 10px;
+  }
+}
+
+
+

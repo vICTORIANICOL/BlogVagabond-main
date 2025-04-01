@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* font-family: "Vesper Libre", serif; */ /* pt aliniate */
+/* font-family: "Montserrat", serif; */ /* headers */
+/* font-family: "Open Sans", serif; */ /* text */
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar {
+  background-color: #161617;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  height: 80px;
+  margin-top: 80px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-menu, .right-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.right-menu {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-10%);
+}
+
+.left-menu {
+  position: absolute;
+  right: 60%;
+  transform: translateX(10%);
+}
+
+.navigation-bar ul li {
+  margin: 0 10px;
+}
+
+.navigation-bar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Cinzel", serif;
+}
+
+.navigation-bar ul li a:hover {
+  color: #C9A76B;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* Ensures it's always clickable above other elements */
+}
+
+@media (max-width: 900px) {
+  .navigation-bar {
+    padding: 20px;
+    position: relative;
+    min-height: 80px;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 999;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161617;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 998; /* Below burger button, but above page */
+  }
+
+  .nav-links.open {
+    display: flex;  /* Makes the menu appear */
+  }
+
+  .logo {
+    height: 50px;
+    margin: 0;
+  }
+
+  .left-menu, .right-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .right-menu {
+    position: static;
+    transform: none;
+  }
+
+  .left-menu{
+    position: static;
+    transform: none;;
+  }
+
+  .navigation-bar ul li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation-bar ul li a {
+    font-size: 18px;
+    display: block;
+    padding: 15px;
+  }
+
+  .burger-menu {
+    display: block;  /* Show the menu on small screens */
+    position: absolute;
+    top: 50%;  
+    right: 20px;
+    transform: translateY(-50%); 
+    font-size: 24px;
+    z-index: 1001;  /* Ensures it's clickable */
+    padding: 10px;
+  }
+}
