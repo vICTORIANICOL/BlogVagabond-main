@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <div className="navigation-bar">
       {/* Logo I moved outside navlinks to stay visible */}
-      <a href="./pages/Home" className="logo-container">
+      <Link to="/" className="logo-container">
         <img
           className="logo"
           src={LogoMenu}
@@ -23,7 +23,7 @@ const Navigation = () => {
           onMouseOver={(e) => (e.target.style.transform = "scale(0.9)")}
           onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
         />
-      </a>
+      </Link>
 
       {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
